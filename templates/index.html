@@ -1,0 +1,80 @@
+{% include "header.html" %}
+
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5">
+
+        <div class="col-10 col-sm-8 col-lg-6 mx-auto text-center d-flex justify-content-center">
+          <img
+            src="static/images/profile.jpg"
+            class="d-block mx-lg-auto img-fluid profile-img"
+            alt="Bootstrap Themes"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold lh-1 mb-3 greeting" data-i18n="greeting">
+                Hi! I'm Tomás Flecchia
+            </h1>
+
+            <p class="lead" data-i18n="description">
+                I'm an IT Technician graduated on the year 2019 in Argentina. Been living in Italy for the past 5 years and studying Python.
+            </p>
+
+            <div class="d-flex flex-nowrap justify-content-center gap-2">
+              <button class="btn btn-outline btn-lg px-4 me-md-2 flag-btn" data-lang="es" onclick="setLanguage('es')">
+                <img src="https://flagcdn.com/40x30/ar.png" width="40" height="30" alt="Argentina">
+                <span class="flag-hover-text" data-tooltip-i18n="Cambiar idioma"></span>
+              </button>
+
+              <button class="btn btn-outline btn-lg px-4 me-md-2 flag-btn" data-lang="it" onclick="setLanguage('it')">
+                <img src="https://flagcdn.com/40x30/it.png" width="40" height="30" alt="Italia">
+                <span class="flag-hover-text" data-tooltip-i18n="Cambia lingua"></span>
+              </button>
+
+              <button class="btn btn-outline btn-lg px-4 me-md-2 flag-btn" data-lang="en" onclick="setLanguage('en')">
+                <img src="https://flagcdn.com/40x30/gb.png" width="40" height="30" alt="Great Britain">
+                <span class="flag-hover-text" data-tooltip-i18n="Change language"></span>
+              </button>
+
+              <button class="btn btn-outline btn-lg px-4 me-md-2 flag-btn" data-lang="de" onclick="setLanguage('de')">
+                <img src="https://flagcdn.com/40x30/de.png" width="40" height="30" alt="Deutschland">
+                <span class="flag-hover-text" data-tooltip-i18n="Sprache ändern"></span>
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include "professional.html" %}
+{% include "abilities.html" %}
+{% include "projects.html" %}
+{% include "footer.html" %}
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".flag-btn").forEach(btn => {
+    const hoverTextEl = btn.querySelector(".flag-hover-text");
+    const text = hoverTextEl.getAttribute("data-tooltip-i18n") || "";
+
+    btn.addEventListener("mouseenter", () => {
+      typeText(hoverTextEl, text, 30);
+    });
+
+    btn.addEventListener("mouseleave", () => {
+      hoverTextEl.textContent = "";
+    });
+  });
+});
+</script>
+
+
+</body>
+</html>

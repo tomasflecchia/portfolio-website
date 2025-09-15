@@ -1,0 +1,288 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #3D348B;
+  background: #FAFAFA !important;
+}
+
+.profile-img {
+  max-width: 350px; /* or whatever size you want */
+  height: auto;     /* keeps the correct aspect ratio */
+  border-radius: 55px; /* optional, if you want rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* soft shadow */
+}
+
+@media (max-width: 576px) {
+  .profile-img {
+    width: 250px;
+    margin-top: -2rem;
+  }
+}
+
+/* Use Playfair Display for headings */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #3D348B;
+}
+
+.greeting {
+    color: #141301;
+}
+
+h2, h3, h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #3D348B;
+}
+
+.container {
+text-align: center;
+	max-width: 100%;
+	width: 90%;
+}
+
+header, header a, header .nav-link {
+  color: #3D348B !important;
+}
+
+header {
+  font-family: 'Playfair Display', serif;
+  font-weight: 1000;
+  line-height: 2;
+  font-size: 1.5em;
+}
+
+.custom-btn {
+  color: #3D348B; /* Text and border color */
+  border: 2px solid #3D348B;
+  border-radius: 50px; /* Fully rounded */
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #3D348B;
+  color: #F7B801 !important;
+}
+
+.code-btn {
+  color: #3D348B; /* Text and border color */
+  border: 2px solid #3D348B;
+  border-radius: 50px; /* Fully rounded */
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.code-btn:hover {
+  background-color: #181717;
+  color: white !important;
+}
+
+.fancy-link {
+  position: relative;
+  display: inline-block;
+  font-weight: 800;
+  color: black;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  margin: 0 1.5em;
+  z-index: 1;
+}
+
+.fancy-link::before {
+  content: '';
+  position: absolute;
+  left: 5%;
+  bottom: 32%;
+  width: 90%;
+  height: 1.2em;
+  background-color: #F7B801;
+  z-index: -1;
+
+  transform: scaleY(0.1);
+  transform-origin: bottom;
+  transition: transform 0.4s ease;
+}
+
+.fancy-link:hover::before,
+.fancy-link:focus::before {
+  transform: scaleY(0.8);
+}
+
+.nav-pills .nav-link {
+  display: flex;
+  align-items: center;
+  height: 75px; /* Match logo height */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section-header {
+    text-align: center;
+}
+
+.flag-btn {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: px;
+  cursor: pointer;
+}
+
+.abilities-card {
+  background-color: #FAFAFA !important;
+  border: 1px solid rgba(0, 0, 0, 0.15); /* borde gris suave */
+  border-top: 6px solid #F7B801;         /* acento amarillo arriba */
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.abilities-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.abilities-card i {
+  display: none;
+}
+
+.skill-title {
+    color: #F7B801 !important;
+}
+
+.card-title {
+    color: black;
+}
+
+.projects-card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.abilities-card a {
+  color: #0d6efd; /* Bootstrap primary color */
+  text-decoration: none; /* remove underline by default */
+  font-weight: 500; /* optional: slightly bolder */
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.abilities-card a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+.abilities-bubble {
+  background-color: #3D348B;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.abilities-bubble:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Small screens — reduce button size and padding */
+@media (max-width: 576px) {
+  .flag-btn {
+    padding: 0.25rem 0.25rem; /* smaller padding */
+    font-size: 0.85rem;      /* optional: reduce font inside button */
+  }
+
+  .flag-btn img {
+    width: 28px;
+    height: 26px;
+  }
+}
+
+.flag-hover-text {
+  font-size: 0.9rem;
+  color: #3D348B;
+  position: absolute;
+  top: 100%;      /* directly below the button */
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.flag-btn:hover .flag-hover-text {
+  opacity: 1;
+}
+
+.card-text {
+    text-align: left;
+}
+
+/* Default: 1300px and above — no clamping needed */
+@media (min-width: 1300px) {
+  .album .card-text {
+    display: block;
+  }
+}
+
+/* 990px to 1300px — 2 lines exact */
+@media (min-width: 990px) and (max-width: 1299px) {
+  .album .card-text {
+    min-height: 58px;      /* exact height for 2 lines */
+    overflow: hidden;
+  }
+}
+
+/* 770px to 989px — 3 lines exact */
+@media (min-width: 768px) and (max-width: 989px) {
+  .album .card-text {
+    min-height: 85px;      /* exact height for 3 lines */
+    overflow: hidden;
+  }
+}
+
+
+/* De acá para abajo es tod0 Professional timeline */
+
+#professional {
+  padding: 2rem 0;
+}
+.timeline-card {
+  border: none;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  position: relative;
+}
+
+.timeline-card img.card-img-top {
+  height: 250px; /* or your preferred height */
+  object-fit: cover;
+  display: block;
+  border: none; /* remove any leftover border */
+}
+
+/* Gradient shadow overlay from bottom-left */
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
+}
+
+.overlay-text h4,
+.overlay-text p {
+  margin: 0;
+  color: white;
+}
