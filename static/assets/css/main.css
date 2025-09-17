@@ -113,6 +113,39 @@ header {
   transform: scaleY(0.8);
 }
 
+.fancy-logo {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.fancy-logo img {
+  display: block;
+  position: relative;
+  z-index: 2; /* keep logo above overlay */
+}
+
+.fancy-logo::before {
+  content: '';
+  position: absolute;
+  top: 10%;       /* leave padding around the letters */
+  left: 3%;
+  width: 82%;
+  height: 80%;
+  background-color: #F7B801;
+  z-index: 1;     /* behind the logo */
+  opacity: 0;     /* start transparent */
+
+  transform: scaleY(0.1);
+  transform-origin: bottom;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.fancy-logo:hover::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
 .nav-pills .nav-link {
   display: flex;
   align-items: center;
